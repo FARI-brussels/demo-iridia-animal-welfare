@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-
 @font-face {
     font-family: 'Plain';
     font-style: normal;
@@ -15,7 +14,6 @@
     src: local('Rhetorik'), url('RhetorikSerifTrial-Regular.ttf') format('truetype');
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -29,7 +27,7 @@ body {
     font-size: x-large;
     color:#2250c6;
     text-align: center;
-    margin-top: -2em;
+    margin-top: -1.5em;
 }
 
 .topbar{
@@ -160,11 +158,11 @@ body {
     text-align: center;
     padding: 2em;
     margin: 2em;
-    margin-top: -2em;
+    margin-top: -3em;
 }
 
 .scroll-leaderboard{
-    height: 70vh;
+    height: 75vh;
     overflow-y: auto;
 }
 
@@ -188,6 +186,7 @@ body {
 .titlescore{
     font-family: 'Rhetorik', sans-serif;
     color: #595959;
+    font-size:x-large;
 }
 
 .textscore{
