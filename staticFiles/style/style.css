@@ -160,6 +160,12 @@ body {
     text-align: center;
     padding: 2em;
     margin: 2em;
+    margin-top: -2em;
+}
+
+.scroll-leaderboard{
+    height: 70vh;
+    overflow-y: auto;
 }
 
 .score ul {
