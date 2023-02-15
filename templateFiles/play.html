@@ -272,7 +272,7 @@
             resetMap([]);
             var currenttime = Date.now();
             var deltatime = currenttime - finishtime;
-            if(deltatime > 20000){ // If after 20sec the user doesn't enter any name we redirect to the starting page
+            if(deltatime > 30000){ // If after 20sec the user doesn't enter any name we redirect to the starting page
                 var btn = document.getElementById("home");
                 btn.click();
             }
