@@ -16,7 +16,6 @@
             <li><a id="playy" href="{{url_for('play')}}">Play</a></li>
             <li><a id="leader" href="{{url_for('leaderboard')}}">Leaderboard</a></li>
         </ul>
-        
     </div>
     
     
@@ -29,9 +28,6 @@
             <option value="NL">NL</option>
         </select>
 
-        <a class="downarrow" href="#button">
-            <span>&#10148;</span>
-        </a>
 
         <div class="title">
             <h1 id="title">Animal well-being</h1>
@@ -95,7 +91,7 @@
 
         <div class="divRules">
             <div class="adexample">
-                <div class='markerContent' style="box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);">
+                <div class='markerRules' style="box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);">
                     <h2 id="example1">Title of ad</h2>
                     <img class='imagRules' src='staticFiles/img/animals/9.png' alt=''>
                     <br>
@@ -211,8 +207,8 @@
 
     // Make sure the player can not go to the game without choosing a difficulty level
     var x = document.getElementById("playy");
-    if({{vector}}.length == 0){
-        x.href = "#button";
+    if({{vector}}.length != 0){
+        x.href = "";
     }
     else{
         x.href = "{{url_for('play')}}";
