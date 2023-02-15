@@ -19,7 +19,7 @@
     "rule7":"The image of the ad can only contain one single animal and vendors can only sell one animal per ad.",
     "rule8":"The ad must be published from the Brussels region or Flanders, so it cannot be published from Wallonia.",
     "rule9":"It is strictly forbidden to sell animals on Facebook Marketplace.",
-    "rule10":"You will <b>earn points</b> based on the <b>number of correctly classified ads</b> and the <b>time you took</b> to complete the task. You will be able to compare your score to other players as well as to the algorithm that takes care of this task in practice. <br><br>This algorithm uses artificial intelligence technologies such as image recognition or natural language processing. In addition, the criteria presented above are a simplification of reality, in practice this algorithm is based on a dozen criteria to classify the ads for selling animals online.",
+    "rule10":"You will <b>earn points</b> based on the <b>number of correctly classified ads</b> and the <b>time you took</b> to complete the task. You will be able to compare your score to other players as well as to the algorithm that takes care of this task in practice. <br><br><b>During this game, you will be able to compare your results with those obtained by the FARI algorithm.</b> This algorithm uses artificial intelligence technologies such as image recognition or natural language processing. In addition, the criteria presented above are a simplification of reality, in practice this algorithm is based on a dozen criteria to classify the ads for selling animals online.",
     "legend":"This project was developed by Julien Baudru under the supervision of the FARI Institute.",
     "eazy":"Eazy",
     "normal":"Normal",
