@@ -370,7 +370,7 @@
     }
 
     // Change de content of the texts depending on the language selected by the player
-    function changeLang(){
+    function changeLang(currentscore){
         var url = "/gettext/"
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", url, false ); // false for synchronous request
@@ -381,7 +381,7 @@
         document.getElementById('playy').innerHTML = text["playy"];
         document.getElementById('leader').innerHTML = text["leader"];
         document.getElementById('quit').innerHTML = text["quit"];
-        document.getElementById('scoretxt').innerHTML = text["score"] + "0";
+        document.getElementById('scoretxt').innerHTML = text["score"] + String(currentscore);
     }
 
     //=================================================================================
@@ -403,6 +403,7 @@
     var currentscore = {{score}};
     var score = document.getElementById("scoretxt");
     score.innerHTML = text["score"] + String(currentscore);
+
 
     if({{time}} !== 0){
         var timer = {{time}};
@@ -432,7 +433,7 @@
     map.setCenter(lonLat, zoom);
 
     // Change the language of the text
-    changeLang();
+    changeLang(currentscore);
 
     // Initialize the map
     resetMap(vectorID);
@@ -447,8 +448,6 @@
     // Open a the first pop up at first
     var feature = vectorLayer.features[0];
     createPopup(feature);
-
-    console.log(vectorLayer.features.length);
 
 
     // Timer and end game conditions
