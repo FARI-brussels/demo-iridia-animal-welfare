@@ -55,6 +55,18 @@
         {
             "pseudo": "test",
             "score": 486
+        },
+        {
+            "pseudo": "v2 ok",
+            "score": 1062
+        },
+        {
+            "pseudo": "test 2",
+            "score": 1049
+        },
+        {
+            "pseudo": "Youpi",
+            "score": 1068
         }
     ]
 }

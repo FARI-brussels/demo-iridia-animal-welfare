@@ -89,7 +89,7 @@
         }
         vectorLayer.removeFeatures(feature);
     }
-    
+
     // Action done when the user choose "Legal" or "Illegal" in an ads
     function doAction(gain, id){
         var currenttime = Date.now();
@@ -226,15 +226,15 @@
                 var finishpopup = document.getElementById("popup");
                 finishpopup.style.display = "block";
                 var finalscore = document.getElementById("show_score");
-                if(good_answers==26){//The play get all the good answer he get the maximal score
+                if(good_answers==15){//The play get all the good answer he get the maximal score
                     if(level==0){
-                        currentscore = 2522;
+                        currentscore = 1490;
                     }
                     else if(level==1){
-                        currentscore = 2548; 
+                        currentscore = 1540; 
                     }
                     else if(level==2){
-                        currentscore = 2574;
+                        currentscore = 1580;
                     }
                 }
                 finalscore.innerHTML+= currentscore;
@@ -326,6 +326,7 @@
                 
                 if(AI_current_ad_id==25){ // Fake AI make an error for the booj
                     AIdoAction(0, AI_current_ad_id); 
+                    console.log("Error of AI");
                 }
                 else{ // Fake AI classify the ad correctly
                     AIdoAction(100, AI_current_ad_id);
@@ -384,15 +385,6 @@
     }
 
     //=================================================================================
-    if({{score}} !== 0){
-        var currentscore = {{score}};
-        var score = document.getElementById("scoretxt");
-        score.innerHTML = text["score"] + String(currentscore);
-    }
-    else{
-        var currentscore = 0;
-    }
-
     var AI_currentscore = 0; var AI_current_ad_id = 0;
     var game_over=0;
     var good_answers = 0; var wrong_answers = 0;
@@ -406,6 +398,11 @@
     var audio_lose = document.getElementById("audio_lose"); // Play lose sound
     var audio_win = document.getElementById("audio_win"); // Play win sound
     var level = {{level}}; // Difficulty level
+
+
+    var currentscore = {{score}};
+    var score = document.getElementById("scoretxt");
+    score.innerHTML = text["score"] + String(currentscore);
 
     if({{time}} !== 0){
         var timer = {{time}};
@@ -450,6 +447,9 @@
     // Open a the first pop up at first
     var feature = vectorLayer.features[0];
     createPopup(feature);
+
+    console.log(vectorLayer.features.length);
+
 
     // Timer and end game conditions
     setInterval(()=>{getTime()},1000);
