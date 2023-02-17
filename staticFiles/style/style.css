@@ -329,6 +329,7 @@ h2{
 }
 
 .markerContent{
+    
     font-family: 'Plain', sans-serif; 
     position:relative;
     width: 800px;
@@ -350,6 +351,15 @@ h2{
     border-radius: 15px;
     padding: 5px;
     text-align: center;
+}
+
+.adtextbasic{
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(234, 234, 234);
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .adtext{
@@ -403,6 +413,11 @@ hr {
 .imag{
     border-radius: 15px;
     width: 60%;
+}
+
+.imagsol{
+    border-radius: 15px;
+    width: 20%;
 }
 
 .description{
