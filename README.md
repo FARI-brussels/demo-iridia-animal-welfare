@@ -1,4 +1,4 @@
-# FARI: Demo for the animal well-being project
+# FARI: Demo for the animal well-being project v2.0
 
 ## Description
 The idea of this project is to explain to a non-expert public the functioning of the AI which classifies online pet sale ads.
