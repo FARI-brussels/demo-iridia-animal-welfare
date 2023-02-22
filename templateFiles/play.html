@@ -33,10 +33,10 @@
         <p>Your score : <b id="show_score"></b> | Your accuracy : <b id="show_acc"></b> </p>
         <p>AI score : <b id="show_score_AI"></b> | AI accuracy : <b id="show_acc_AI"></b> </p>
         
-        <p>
+        <p class="popup-text">
         As you have seen the algorithm is quicker than human.<br>
-        Indeed, you took <b id="show_time"></b> to classify the adds, the algo took <b>6 seconds</b>.<br>
-        This is the main advantage of blablabla....
+        Indeed, you took <b id="show_time"></b> to classify the adds, the algo took <b>6 seconds</b>.<br> <br>
+        The main advantage of this algorithm is on the one hand its speed of execution for the verifications compared to a human and on the other hand its reliability for the classification of data.
         </p>
         <br>
         <p><b>Choose an username:</b></p>
@@ -89,7 +89,7 @@
         }
         vectorLayer.removeFeatures(feature);
     }
-    
+
     // Action done when the user choose "Legal" or "Illegal" in an ads
     function doAction(gain, id){
         var currenttime = Date.now();
@@ -195,7 +195,6 @@
                     text.innerHTML += "<b><p class='description'>You choose the correct anwser because:</p></b>";
                 }
                 text.innerHTML += vectorLayer.features[i]['attributes']['description'][2];
-                text.innerHTML += "<hr>"
                 text.innerHTML += "<b><p class='description'>Steps made by the AI to classify this ads:</p></b>";
                 text.innerHTML += vectorLayer.features[i]['attributes']['description'][3];
                 text.innerHTML += "<button class='but_next' onclick='nextAds()'>Next</button>";
@@ -227,15 +226,15 @@
                 var finishpopup = document.getElementById("popup");
                 finishpopup.style.display = "block";
                 var finalscore = document.getElementById("show_score");
-                if(good_answers==26){//The play get all the good answer he get the maximal score
+                if(good_answers==15){//The play get all the good answer he get the maximal score
                     if(level==0){
-                        currentscore = 2522;
+                        currentscore = 1490;
                     }
                     else if(level==1){
-                        currentscore = 2548; 
+                        currentscore = 1540; 
                     }
                     else if(level==2){
-                        currentscore = 2574;
+                        currentscore = 1580;
                     }
                 }
                 finalscore.innerHTML+= currentscore;
@@ -272,7 +271,7 @@
             resetMap([]);
             var currenttime = Date.now();
             var deltatime = currenttime - finishtime;
-            if(deltatime > 20000){ // If after 20sec the user doesn't enter any name we redirect to the starting page
+            if(deltatime > 40000){ // If after 40sec the user doesn't enter any name we redirect to the starting page
                 var btn = document.getElementById("home");
                 btn.click();
             }
@@ -324,8 +323,7 @@
         if(game_over==1){ 
             if(AI_current_ad_id < vectorLayer.features.length){ // If there is remaining ad on the map
                 createPopup(vectorLayer.features[AI_current_ad_id]);
-                
-                if(AI_current_ad_id==25){ // Fake AI make an error for the booj
+                if(AI_current_ad_id==14){ // Fake AI make an error for the book
                     AIdoAction(0, AI_current_ad_id); 
                 }
                 else{ // Fake AI classify the ad correctly
@@ -370,7 +368,7 @@
     }
 
     // Change de content of the texts depending on the language selected by the player
-    function changeLang(){
+    function changeLang(currentscore){
         var url = "/gettext/"
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", url, false ); // false for synchronous request
@@ -381,19 +379,10 @@
         document.getElementById('playy').innerHTML = text["playy"];
         document.getElementById('leader').innerHTML = text["leader"];
         document.getElementById('quit').innerHTML = text["quit"];
-        document.getElementById('scoretxt').innerHTML = text["score"] + "0";
+        document.getElementById('scoretxt').innerHTML = text["score"] + String(currentscore);
     }
 
     //=================================================================================
-    if({{score}} !== 0){
-        var currentscore = {{score}};
-        var score = document.getElementById("scoretxt");
-        score.innerHTML = text["score"] + String(currentscore);
-    }
-    else{
-        var currentscore = 0;
-    }
-
     var AI_currentscore = 0; var AI_current_ad_id = 0;
     var game_over=0;
     var good_answers = 0; var wrong_answers = 0;
@@ -407,6 +396,12 @@
     var audio_lose = document.getElementById("audio_lose"); // Play lose sound
     var audio_win = document.getElementById("audio_win"); // Play win sound
     var level = {{level}}; // Difficulty level
+
+
+    var currentscore = {{score}};
+    var score = document.getElementById("scoretxt");
+    score.innerHTML = text["score"] + String(currentscore);
+
 
     if({{time}} !== 0){
         var timer = {{time}};
@@ -436,7 +431,7 @@
     map.setCenter(lonLat, zoom);
 
     // Change the language of the text
-    changeLang();
+    changeLang(currentscore);
 
     // Initialize the map
     resetMap(vectorID);
@@ -451,6 +446,7 @@
     // Open a the first pop up at first
     var feature = vectorLayer.features[0];
     createPopup(feature);
+
 
     // Timer and end game conditions
     setInterval(()=>{getTime()},1000);

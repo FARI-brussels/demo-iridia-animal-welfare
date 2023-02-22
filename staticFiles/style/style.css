@@ -1,18 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-      @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@font-face {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Plain'), url('Plain-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Rhetorik';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rhetorik'), url('RhetorikSerifTrial-Regular.ttf') format('truetype');
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Muli', sans-serif;   
+    font-family: 'Plain', sans-serif;   
 }
 
 .title{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Rhetorik', sans-serif;
     font-size: x-large;
-    color:#7bc1ff;
+    color:#2250c6;
     text-align: center;
+    margin-top: -1.5em;
+}
+
+h2{
+    font-family: 'Rhetorik', sans-serif;
 }
 
 .topbar{
@@ -55,7 +74,7 @@ body {
     color: white;
     padding: 14px 16px;
     text-decoration: none;
-    background-color:#a3d4ff;
+    background-color:#2250c6;
     transition: 0.2s;
 }
 
@@ -81,7 +100,7 @@ body {
 }
 
 .main{
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     margin-left: 20%;
     margin-right: 20%;
     text-align: left;
@@ -89,6 +108,31 @@ body {
     border-radius: 10px;
     background-color: whitesmoke;
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+}
+
+.mainRules{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    font-family: 'Plain', sans-serif; 
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: left;
+    padding: 0em 1em 1em 1em;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+}
+
+.imagRules{
+    border-radius: 15px;
+    width: 50%;
+}
+
+.divRules{
+    width: 50%;
+    float: left;
 }
 
 .adexample{
@@ -103,7 +147,7 @@ body {
 }
 
 .legend{
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     font-size: smaller;
     color: #595959;
     margin: 1em;
@@ -112,16 +156,26 @@ body {
 
 
 .subtitle{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Rhetorik', sans-serif;
     font-size: x-large;
-    color:#a3d4ff;
+    color:#2250c6;
 }
 
 .score{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
     vertical-align: middle;
     text-align: center;
     padding: 2em;
     margin: 2em;
+    margin-top: -4em;
+}
+
+.scroll-leaderboard{
+    height: 75vh;
+    overflow-y: auto;
 }
 
 .score ul {
@@ -142,18 +196,19 @@ body {
 
 
 .titlescore{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Rhetorik', sans-serif;
     color: #595959;
+    font-size:x-large;
 }
 
 .textscore{
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     display: inline-block;
     width: 50%;
 }
 
 .textscore2{
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     display: inline-block;
     width: 50%;
 }
@@ -164,7 +219,7 @@ body {
     transition: 1s opacity;
 
     font-size: 25px;
-    color:#a3d4ff;
+    color:#2250c6;
     z-index: 100;
     margin-left: 130px;
     margin-top: 10px;
@@ -236,11 +291,17 @@ body {
 }
 
 .slide{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    
     position: absolute;
     z-index: 200;
     opacity: 0;
     
     height: calc( 100vh - 80px );
+    width: 800px;
+    left: -272px;
     
     overflow-y: auto;
     overflow-x: hidden;
@@ -253,7 +314,7 @@ body {
 }   
 
 .username{
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plain', sans-serif;
     font-size: large;
     border-radius: 10px;
     padding: 5px;
@@ -265,13 +326,14 @@ body {
 .popup{
     display: none;
     z-index: 2000;
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     color: rgb(64, 64, 64);
     background-color: white;
     border-radius: 15px;
     padding: 5px;
     text-align: center;
     position: fixed;
+    opacity: 95%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -279,16 +341,46 @@ body {
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
 }
 
+.popup-text{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 .markerContent{
-    font-family: 'Muli', sans-serif; 
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    font-family: 'Plain', sans-serif; 
+    position:relative;
+    width: 800px;
+    color: rgb(64, 64, 64);
+    background-color: white;
+    opacity: 100%;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
+.markerRules{
+    font-family: 'Plain', sans-serif; 
     position:relative;
     width: 500px;
     color: rgb(64, 64, 64);
     background-color: white;
-    opacity: 90%;
+    opacity: 100%;
     border-radius: 15px;
     padding: 5px;
     text-align: center;
+}
+
+.adtextbasic{
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(234, 234, 234);
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .adtext{
@@ -341,7 +433,12 @@ hr {
 
 .imag{
     border-radius: 15px;
-    width: 80%;
+    width: 60%;
+}
+
+.imagsol{
+    border-radius: 15px;
+    width: 20%;
 }
 
 .description{
@@ -351,7 +448,7 @@ hr {
 }
 
 .but_legal {
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     height: 60px;
     width: 40%;
     color: white;
@@ -367,7 +464,7 @@ hr {
 }
 
 .but_illegal {
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     height: 60px;
     width: 40%;
     color: white;
@@ -388,7 +485,7 @@ hr {
     width: 100%;
     font-size: 15px;
     color: white;
-    background-color: #a3d4ff;
+    background-color: #2250c6;
     border-width : 0;
     border: none;
     text-align: center;
@@ -397,7 +494,7 @@ hr {
 }
 
 .select_diff:hover{
-    background-color: #7bc1ff;
+    background-color: #2250c6;
 }
 
 .select_lang{
@@ -411,7 +508,7 @@ hr {
 
     font-size: 15px;
     color: white;
-    background-color: #a3d4ff;
+    background-color: #2250c6;
     border-width : 0;
     border: none;
     text-align: center;
@@ -420,7 +517,7 @@ hr {
 }
 
 .select_lang:hover{
-    background-color: #7bc1ff;
+    background-color: #2250c6;
 }
 
 .but_save{
@@ -428,7 +525,7 @@ hr {
     height: 40px;
     font-size: 15px;
     color: white;
-    background-color: #a3d4ff;
+    background-color: #2250c6;
     border-width : 0;
     text-align: center;
     padding: 20px 40px;
@@ -438,7 +535,7 @@ hr {
 }
 
 .but_save:hover{
-    background-color: #7bc1ff;
+    background-color: #2250c6;
 }
 
 
@@ -466,12 +563,12 @@ hr {
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 5%;
-    width: 80%;
+    width: 85%;
     height: 65px;
 
     font-size: 15px;
     color: white;
-    background-color: #a3d4ff;
+    background-color: #2250c6;
     border-width : 0;
     text-align: center;
     padding: 10px 20px;
@@ -481,10 +578,8 @@ hr {
 }
 
 .but_next:hover{
-    background-color: #7bc1ff;
+    background-color: #2250c6;
 }
-
-
 
 .but_play{
     display:flex;
@@ -496,7 +591,7 @@ hr {
 
     font-size: 15px;
     color: white;
-    background-color: #a3d4ff;
+    background-color: #2250c6;
     border-width : 0;
     border: none;
     text-align: center;
@@ -507,7 +602,7 @@ hr {
 }
 
 .but_play:hover{
-    background-color: #7bc1ff;
+    background-color: #2250c6;
 
 }
 
@@ -522,18 +617,18 @@ hr {
     padding-bottom: 10px;
     
     text-align: center;
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plain', sans-serif; 
     text-decoration: none;
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
 
     color: white;
-    background-color: #a3d4ff;
+    background-color: #2250c6;
     border-radius: 10px;
 }
 
 .downarrow:hover{
-    background-color: #7bc1ff;
+    background-color: #2250c6;
     transition: 0.5s;
     
 }

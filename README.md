@@ -1,4 +1,4 @@
-# FARI: Demo for the animal well-being project
+# FARI: Demo for the animal well-being project v2.0
 
 ## Description
 The idea of this project is to explain to a non-expert public the functioning of the AI which classifies online pet sale ads.
@@ -19,6 +19,6 @@ Then go to:
 http://192.168.0.219:5000/ or to http://127.0.0.1:5000/
 
 ## Screenshot
-![screenshot](staticFiles/img/screenshot.png "Text to show on mouseover")
-
 ![screenshot](staticFiles/img/screenshot_v2.png "Text to show on mouseover")
+
+![screenshot](staticFiles/img/screenshot.png "Text to show on mouseover")
