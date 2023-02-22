@@ -35,8 +35,8 @@
         
         <p>
         As you have seen the algorithm is quicker than human.<br>
-        Indeed, you took <b id="show_time"></b> to classify the adds, the algo took <b>6 seconds</b>.<br>
-        This is the main advantage of blablabla....
+        Indeed, you took <b id="show_time"></b> to classify the adds, the algo took <b>6 seconds</b>.<br> <br>
+        The main advantage of this algorithm is on the one hand its speed of execution for the verifications compared to a human and on the other hand its reliability for the classification of data.
         </p>
         <br>
         <p><b>Choose an username:</b></p>
@@ -271,7 +271,7 @@
             resetMap([]);
             var currenttime = Date.now();
             var deltatime = currenttime - finishtime;
-            if(deltatime > 30000){ // If after 20sec the user doesn't enter any name we redirect to the starting page
+            if(deltatime > 40000){ // If after 40sec the user doesn't enter any name we redirect to the starting page
                 var btn = document.getElementById("home");
                 btn.click();
             }
@@ -323,10 +323,8 @@
         if(game_over==1){ 
             if(AI_current_ad_id < vectorLayer.features.length){ // If there is remaining ad on the map
                 createPopup(vectorLayer.features[AI_current_ad_id]);
-                
-                if(AI_current_ad_id==25){ // Fake AI make an error for the booj
+                if(AI_current_ad_id==14){ // Fake AI make an error for the book
                     AIdoAction(0, AI_current_ad_id); 
-                    console.log("Error of AI");
                 }
                 else{ // Fake AI classify the ad correctly
                     AIdoAction(100, AI_current_ad_id);

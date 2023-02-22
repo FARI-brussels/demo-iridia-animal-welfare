@@ -6,7 +6,7 @@
         },
         {
             "pseudo": "FARI AI algorithm",
-            "score": 1489
+            "score": 1389
         },
         {
             "pseudo": "test new",
@@ -35,6 +35,14 @@
         {
             "pseudo": "New_test_2K23",
             "score": 1057
+        },
+        {
+            "pseudo": "newtest",
+            "score": 1067
+        },
+        {
+            "pseudo": "Hell yeah",
+            "score": 1076
         }
     ]
 }
